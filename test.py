@@ -18,12 +18,19 @@ def k_most_similar(word: str, k: int) -> list[str]:
     top_k = []
     worst_accepted = -1
 
-    for row, idx in enumerate(W_in):
+    for idx, row in enumerate(W_in):
         if row is not needle_row:
             score = cos_similarity(row, needle_row)
-            if score > worst_accepted or len(top_k) < k:
+            if len(top_k) < k:
                 top_k.append((idx_dict[idx], score))
-                worst_accepted = min([score for _, score in top_k])
+
+            elif score > worst_accepted:
+                pos = 0
+                while(score < top_k[pos][1]):
+                    pos += 1
+                top_k.insert(pos, (idx_dict[idx], score))
+                top_k.pop()
+                worst_accepted = top_k[-1][1]
 
     return top_k
 
