@@ -8,6 +8,8 @@ Some testing output:
        ('city', np.float64(0.9689608914426501)),
        ('union', np.float64(0.9679397442382845))
        ('conquest', np.float64(0.9644543365331338))]
+  
+  
   Top 5 for "france" (my implementation works is lower case only):
     [('france', np.float64(1.0)),
      ('conscription', np.float64(0.9513908326106072)),
