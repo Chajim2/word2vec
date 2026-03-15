@@ -34,4 +34,5 @@ def k_most_similar(word: str, k: int) -> list[str]:
 
     return top_k
 
-print(k_most_similar("king", 8))
+print(k_most_similar("king", 5))
+print(k_most_similar("tree", 5))
